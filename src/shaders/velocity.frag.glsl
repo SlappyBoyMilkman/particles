@@ -86,10 +86,8 @@ void main() {
   float dist = distance(targetPos, inPosition);
   vec3 direction = normalize(targetPos - inPosition);
 
-  /*replace*/
   dist = max(dist, 1.0);
   outVelocity = inVelocity + ((direction / dist) * gravityFactor * 0.05);
-  /*replace*/
 
   gl_FragColor = vec4( outVelocity, 1.0 );
 }

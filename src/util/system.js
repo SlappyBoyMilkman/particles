@@ -1,4 +1,5 @@
 import myShader from "../shaders/display.frag.glsl"
+const glslify = require("glslify")
 const THREE = require( "three" );
 
 
@@ -42,7 +43,6 @@ class System{
     this.scenes.random.add( this.createMesh( this.textureSize, shaderMaterials.random ));
 
     this.pointCloud = this.createPoints( this.textureSize, shaderMaterials.display );
-    debugger
     this.three.renderer.render( this.scenes.random, this.three.camera, renderTargets.velocity[0]);
     this.three.renderer.render( this.scenes.random, this.three.camera, renderTargets.position[0]);
 
